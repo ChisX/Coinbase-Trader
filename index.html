@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcane/Coinbase Purchase & Cashout</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="./styles/modal.css">
+  
+  <!-- Scripts -->
+  <script src="scripts/entry.js" defer></script>
+  <script src="scripts/modal.js" defer></script>
+  <script src="dist/bundle.js"></script>
+</head>
+<body>
+  <section>
+    <div id="entry">
+      <h3><u>Authorization</u></h3>
+      <p>To buy or sell cryptocurrency using this interface, you must make an account with coinbase and obtain an API Key and an API Secret.</p>
+      <form class="inputGroup">
+        <input type="text" id="aKey" placeholder="Enter your API Key">
+        <input type="text" id="aSec" placeholder="Enter your API Secret">  
+        <div class="inpSubmit">
+          <input type="submit" value="Authorize">
+          <i class="fas fa-lock"></i><i class="fas fa-unlock"></i>
+        </div>
+      </form>
+      <p>*Just make an account with binance and follow <a href="https://cryptopro.app/help/automatic-import/coinbase-api-key/">these</a> instructions.</p>
+    </div>
+    <div id="panel" class="hidden">
+      <h1><u>Arcane Fiat-to-Crypto Trader</u></h1>
+      <div class="info">
+        <input type="text" id="info-aKey" disabled value="">
+        <input type="text" id="info-aSec" disabled value="">
+      </div>
+      <div class="coins">
+        <select name="baseQty" id="crypto">
+          <option value="" disabled hidden>Select Cryptocurrency</option>
+          <option value="BTC">Bitcoin (BTC)</option>
+          <option value="ETH">Ethereum (ETH)</option>
+        </select>
+        <div class="exchange">
+          <input type="number" class="output" min="0">
+          <input type="number" class="input"  min="0">
+        </div>
+        <div class="threshold">
+          <div id="modal-box" style="display: none;">
+            <div id="modal-content">
+              <h1 id="modal-header">Fair Use Warning</h1>
+              <p id="modal-paragraph">If you buy cryptocurrency, you need to set the maximum buy threshold. If the price of CRYPTO/USD is greater than you specify, the transaction will be automatically cancelled, protecting your funds. Conversely, if you're attempting to sell cryptocurrency to buy USD, setting a sell threshold will cancel transactions for which the sell price of your cryptocoins is too low.</p>
+              <h3 id="modal-footer"><label for="ack">Do you Acknowledge This?</label> <input type="checkbox" name="ack" id="ack"></h3>
+            </div>
+          </div>
+          <input type="number" id="threshold" placeholder="Enter Threshold Price" min="0">
+        </div>
+        <h1 id="display"></h1>
+      </div>
+      <div class="operations">
+        <button id="btnBuy">Buy Cryptocurrency</button>
+        <button id="btnSll">Sell Cryptocurrency</button>
+      </div>
+      <input type="submit" id="returnBtn" value="Return">
+    </div>
+  </section>
+</body>
+</html>

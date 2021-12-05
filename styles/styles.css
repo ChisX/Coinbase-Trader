@@ -1,0 +1,334 @@
+/* --- Font Imports --- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+  /* --- CSS Palette --- */
+  --clr-A1: hsl(205, 86%,  17%);
+  --clr-A2: hsl(205, 77%,  27%);
+  --clr-A3: hsl(205, 72%,  37%);
+  --clr-A4: hsl(205, 63%,  48%);
+  --clr-A5: hsl(205, 89%,  70%);
+  --clr-A6: hsl(205, 90%,  76%);
+  --clr-A7: hsl(205, 86%,  81%);
+
+  --clr-B1: hsl(330, 73%,  19%);
+  --clr-B2: hsl(330, 77%,  27%);
+  --clr-B3: hsl(330, 72%,  37%);
+  --clr-B4: hsl(330, 63%,  48%);
+  --clr-B5: hsl(330, 89%,  70%);
+  --clr-B6: hsl(330, 90%,  76%);
+  --clr-B7: hsl(330, 86%,  81%);
+  --clr-B8: hsl(330, 90%,  88%);
+
+  --clr-C1: hsl(157, 70%,  19%);
+  --clr-C2: hsl(157, 70%,  29%);
+  --clr-C3: hsl(157, 77%,  39%);
+  --clr-C4: hsl(157, 72%,  49%);
+  --clr-C5: hsl(157, 63%,  59%);
+  --clr-C6: hsl(157, 89%,  69%);
+
+  --clr-D1: hsl(41,100%, 25%);
+  --clr-D2: hsl(41,100%, 35%);
+  --clr-D3: hsl(41,100%, 45%);
+  --clr-D4: hsl(41,100%, 55%);
+  --clr-D5: hsl(41,100%, 65%);
+  --clr-D6: hsl(41,100%, 75%);
+  
+  --clr-E1: hsl(209, 61%, 16%);
+  --clr-E2: hsl(211, 39%, 23%);
+  --clr-E3: hsl(209, 34%, 30%);
+  --clr-E4: hsl(209, 28%, 39%);
+  --clr-E5: hsl(210, 22%, 49%);
+  --clr-E6: hsl(209, 23%, 60%);
+  --clr-E7: hsl(211, 27%, 70%);
+  --clr-E8: hsl(210, 31%, 80%);
+
+  --clr-F1: hsl(261, 67%, 10%);
+  --clr-F2: hsl(261, 67%, 20%);
+  --clr-F3: hsl(261, 67%, 30%);
+  --clr-F4: hsl(261, 67%, 40%);
+  --clr-F5: hsl(261, 67%, 50%);
+  --clr-F6: hsl(261, 67%, 60%);
+
+  --clr-white: #b1b1b1;
+  --clr-black: #222;
+  --clr-blue-dark: hsl(207, 100%, 13%);
+  --clr-blue-light: hsl(207, 100%, 63%);
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(154, 100%, 27%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  
+  /* --- CSS Fonts --- */
+  --ff1: 'Times New Roman', Times, serif;
+  --ff2: monospace;
+  --ff3: 'Rubik', sans-serif;
+  --ff4: 'Zen Dots', cursive;
+  --ff5: 'Indie Flower', cursive;
+  --ff6: 'Lobster', cursive;
+  --ff7: 'Dancing Script', cursive;
+  font-size: 62.5%;
+}
+
+
+/* --------- Static Web Design --------- */
+/* --- Global Styles --- */
+*,*::before,*::after {
+  box-sizing: border-box;
+  transition: 0.3s ease;
+  margin: 0; padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  font-size: 1.4rem;
+  
+  font-family: var(--ff1);
+  background-color: var(--clr-black);
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+ul  { list-style-type: none; }
+a   { text-decoration: none; }
+img { display: block; }
+
+section {
+  width: 100%;
+  min-height: 200px;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #444;
+  color: var(--clr-black);
+}
+
+#entry { z-index: 2; }
+#panel { z-index: 1; }
+
+#entry,#panel {
+  width: 80%;
+  min-width: 500px;
+  max-width: 700px;
+  padding: 25px;
+  margin: 20px;
+
+  background: var(--clr-D4);
+  border-radius: 10px;
+  font-family: var(--ff3);
+  position: absolute;
+  box-shadow: +2px +2px 10px black,
+              +2px -2px 10px black,
+              -2px +2px 10px black,
+              -2px -2px 10px black;
+}
+
+#entry .inputGroup input {
+  margin: 10px;
+  padding: 10px;
+  
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#entry .inputGroup input[type="text"] {
+  width: 45%;
+}
+
+#entry .inputGroup .inpSubmit input[type="submit"] {
+  width: 100%;
+  margin: auto;
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  font-size: 2rem;
+  letter-spacing: 3px;
+
+  font-family: var(--ff6);
+}
+
+
+#entry .inputGroup .inpSubmit {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#entry .inputGroup .inpSubmit i.fas {
+  font-size: 1.8rem;
+
+  position: absolute;
+  top: 50%; left: 20px;
+  transform: translateY(-50%);
+}
+
+#entry p:last-child {
+  margin-top: 20px;
+}
+
+#entry a {
+  color: var(--clr-A2);
+  text-shadow: 1px 1px 1px white;
+}
+
+#panel .info {
+  height: 60px;
+  margin: 20px;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--clr-D5);
+  border-radius: 10px;
+  box-shadow: +1px +1px 1px black,
+              +1px -1px 1px black,
+              -1px +1px 1px black,
+              -1px -1px 1px black;
+}
+
+#panel .info input {
+  width: 100%;
+  height: 20px;
+  text-indent: 10px;
+}
+
+#panel .coins {
+  width: 100%;
+  height: 150px;
+  margin: 10px auto;
+
+  background: rgba(119, 119, 119, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+#panel .coins .threshold p {
+  margin: 10px;
+  font-size: 1.5rem;
+  
+  color: var(--clr-B2);
+  font-family: var(--ff6);
+  text-align: justify;
+}
+
+#panel .coins .threshold > input {
+  width: 95%;
+  max-height: 30px;
+  padding: 8px;
+  
+  border: none;
+}
+
+#panel .coins #display {
+  text-align: center;
+}
+
+#panel .coins select {
+  width: 200px;
+  height: 30px;
+  margin: 10px;
+  text-indent: 10px;
+  
+  background: white;
+  border: none;
+  border-radius: 10px;
+}
+
+#panel .coins .exchange {
+  width: 100%;
+  height: 50px;
+}
+
+#panel .coins .exchange input {
+  width: 200px;
+  height: 30px;
+  margin: 10px;
+
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+}
+
+#panel .operations {
+  margin-bottom: 10px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#panel .operations button {
+  padding: 3px;
+  margin: 10px;
+  letter-spacing: 2px;
+
+  background: rgba(236, 236, 40, 0.4);
+  font-family: 'Yusei Magic', sans-serif;
+  border: 1px solid black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#panel #returnBtn {
+  width: 100%;
+  height: 40px;
+  
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* --------- Dynamic Web Design --------- */
+#entry .inputGroup .inpSubmit input:hover,
+#panel #returnBtn:hover {
+  background: var(--clr-D3);
+}
+
+#entry .inputGroup .inpSubmit input:hover + i.fas {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+#entry .inputGroup input[type="text"]:focus {
+  transition: 0.2s;
+  outline: none;
+  box-shadow: +1px +1px 1px #333,
+              +1px -1px 1px #333,
+              -1px +1px 1px #333,
+              -1px -1px 1px #333,
+              +2px +2px 20px var(--clr-D3),
+              +2px -2px 20px var(--clr-D3),
+              -2px +2px 20px var(--clr-D3),
+              -2px -2px 20px var(--clr-D3);
+}
+
+.hidden {
+  transform: translateX(-50%) rotate(150deg);
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#panel .operations button:hover {
+  background: rgb(236, 236, 40);
+}

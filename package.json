@@ -1,0 +1,22 @@
+{
+  "name": "cryptotrader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "browserify scripts/trader.js > dist/bundle.js --standalone coinbase"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "coinbase": "^2.0.8"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  }
+}

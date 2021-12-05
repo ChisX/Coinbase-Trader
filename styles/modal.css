@@ -1,0 +1,83 @@
+#modal-container > h1,
+#modal-container
+{
+  text-align: center;
+}
+
+#modal-btn
+{
+  margin: 16px 0;
+  padding: 5px 15px;
+
+  border: none;
+  border: 1px solid black;
+  background: white;
+}
+
+#modal-box {
+  height: 100%;
+  padding: 150px 150px;
+  
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  text-align: center;
+  background-color: rgb(255, 255, 255, 0.8);
+  position: relative;
+  margin: auto;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  
+  animation-name: animatetop;
+  animation-duration: var(--transition-speed);
+}
+
+#modal-header,
+#modal-footer
+{
+  background-color: rgb(37, 87, 82);
+  color: white;
+}
+
+#modal-paragraph
+{
+  padding: 10px;
+
+  border: 2px solid rgb(37, 87, 82);
+  text-align: justify;
+}
+
+#modal-footer > :is(label,#ack) {
+  display: inline-block;
+}
+
+#modal-footer #ack {
+  margin-left: 10px;
+}
+
+#modal-close {
+  font-size: 28px;
+  margin-left: 20px;
+
+  color: white;
+  font-weight: bold;
+}
+
+
+/* Animation */
+#modal-btn:hover {
+  cursor: pointer;
+}
+
+#modal-close:hover,
+#modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to   {top:0;      opacity:1}
+}
